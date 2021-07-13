@@ -2,6 +2,12 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app). It's cool.
 
+Install Git/Git Bash. Clone the Repository. Then you can run it locally.
+
+Start by installing [NodeJS](https://nodejs.org/). This will install `npm`. If you are using Visual Studio Code, you may have to restart it after installing.
+
+After that, open up the folder and run `npm install`. Then, to start the server, you can run the `npm start` command.
+
 ## Available Scripts
 
 In the project directory, you can run:
