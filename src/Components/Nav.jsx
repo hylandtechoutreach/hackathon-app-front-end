@@ -22,33 +22,33 @@ const Nav = () => {
       <div className="Navbar">
         <div className="top_Sidebar">
 
-          <div className="navigation__buttons">
+          <div className="nav_buttons">
             <Link to="/Homepage">
-              <button className="learn-more">Home</button>
+              <button className="button">Home</button>
             </Link>
             <Link to="/Teamprofile">
-              <button className="learn-more">Team Profile</button>
+              <button className="button">Team Profile</button>
             </Link>
             <Link to="/Otherteams">
-              <button className="learn-more">Other Teams</button>
+              <button className="button">Other Teams</button>
             </Link>
             <Link to="/Faq">
-              <button className="learn-more">FAQ's</button>
+              <button className="button">FAQ's</button>
             </Link>
             <Link to="/Rubric">
-              <button className="learn-more">Rubric</button>
+              <button className="button">Rubric</button>
             </Link>
             <Link to="/Submissionform">
-              <button className="learn-more">Submission Form</button>
+              <button className="button">Submission Form</button>
             </Link>
             <Link to="/Viewteams">
-              <button className="learn-more">View Teams</button>
+              <button className="button">View Teams</button>
             </Link>
             <Link to="/Submissions">
-              <button className="learn-more">Submissions</button>
+              <button className="button">Submissions</button>
             </Link>
             <Link to="/Pastevents">
-              <button className="learn-more">Past Events</button>
+              <button className="button">Past Events</button>
             </Link>
            
           </div>
