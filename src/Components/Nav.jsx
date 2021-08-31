@@ -4,7 +4,7 @@ import Faq from "./Faq";
 import Otherteams from "./Otherteams";
 import Pastevents from "./Pastevents";
 import Rubric from "./Rubric";
-import Submissionform from "./Submissionform";
+import TeamSubmission from "./TeamSubmission.js";
 import Submissions from "./Submissions";
 import Teamprofile from "./Teamprofile";
 import Viewteams from "./Viewteams";
@@ -38,7 +38,7 @@ const Nav = () => {
             <Link to="/Rubric">
               <button className="button">Rubric</button>
             </Link>
-            <Link to="/Submissionform">
+            <Link to="/TeamSubmission">
               <button className="button">Submission Form</button>
             </Link>
             <Link to="/Viewteams">
@@ -61,7 +61,7 @@ const Nav = () => {
               <Route path="/Otherteams" exact component={Otherteams}></Route>
               <Route path="/Faq" exact component={Faq}></Route>
               <Route path="/Rubric" exact component={Rubric}></Route>
-              <Route path="/Submissionform" exact component={Submissionform}></Route>
+              <Route path="/TeamSubmission" exact component={TeamSubmission}></Route>
               <Route path="/Viewteams" exact component={Viewteams}></Route>
               <Route path="/Submissions" exact component={Submissions}></Route>
               <Route path="/Pastevents" exact component={Pastevents}></Route>
