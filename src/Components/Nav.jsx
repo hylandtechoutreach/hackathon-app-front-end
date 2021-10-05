@@ -6,7 +6,7 @@ import Pastevents from "./Pastevents";
 import Rubric from "./Rubric";
 import TeamSubmission from "./TeamSubmission.js";
 import Submissions from "./Submissions";
-import Teamprofile from "./Teamprofile";
+import Teamprofile from "./Teamprofile.js";
 import Viewteams from "./Viewteams";
 import Homepage from "./Homepage";
 import { useState } from "react";
