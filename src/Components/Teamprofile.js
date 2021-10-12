@@ -15,7 +15,7 @@ export class TeamProfile extends Component {
       .then((response) => response.json())
 
       .then((data) => {
-        this.setState({ deps: data });
+        this.setState({deps: data});
       });
   }
   componentDidMount() {
@@ -26,20 +26,7 @@ export class TeamProfile extends Component {
   }
 
   render() {
-    const {
-      deps,
-      depid,
-      depname,
-      dephsorcoll,
-      depnames,
-      depschools,
-      depgrades,
-      depstruggle,
-      depideaproject,
-      deplocation,
-      depcontactinfo,
-      depphonenumber,
-    } = this.state;
+    const {deps, depid, depname, dephsorcoll, depnames, depschools, depgrades, depstruggle, depideaproject, deplocation, depcontactinfo, depphonenumber} = this.state;
     let addModalClose = () => this.setState({ addModalShow: false });
     let editModalClose = () => this.setState({ editModalShow: false });
     return (
@@ -62,7 +49,7 @@ export class TeamProfile extends Component {
           <tbody>
             {deps.map((dep) => (
               <tr key={dep.TeamId}>
-                <td>{deps.TeamId}</td>
+                
                 <td>{dep.TeamName}</td>
                 <td>{dep.HSorColl}</td>
                 <td>{dep.Names}</td>
@@ -77,35 +64,22 @@ export class TeamProfile extends Component {
                   <ButtonToolbar>
                     <Button variant="info"
                       onClick={()=>this.setState({ editModalShow: true, //has to be true or will not show at all
-                          depid: dep.TeamId,
-                          depname: dep.TeamName,
-                          dephsorcoll: dep.HSorColl,
-                          depnames: dep.Names,
-                          depschools: dep.Schools,
-                          depgrades: dep.Grades,
-                          depstruggle: dep.Struggle,
-                          depideaproject: dep.IdeaProject,
-                          deplocation: dep.Location,
-                          depcontactinfo: dep.ContactInfo,
-                          depphonenumber: dep.PhoneNumber,
-                        })
-                      }
-                    >
+                        depid: dep.TeamId, depname: dep.TeamName, dephsorcoll: dep.HSorColl, depnames: dep.Names, depschools: dep.Schools, depgrades: dep.Grades, depstruggle: dep.Struggle, depideaproject: dep.IdeaProject, deplocation: dep.Location, depcontactinfo: dep.ContactInfo, depphonenumber: dep.PhoneNumber,})}>
                       Edit
                     </Button>
                     <EditTeamModal
                       show={this.state.editModalShow}
                       onHide={editModalClose}
-                      depid={depid}
-                      depname={depname}
-                      dephsorcoll={dephsorcoll}
-                      depnames={depnames}
-                      depschools={depschools}
-                      depgrades={depgrades}
-                      depstruggle={depstruggle}
-                      deplocation={deplocation}
-                      depcontactinfo={depcontactinfo}
-                      depphonenumber={depphonenumber}
+                      depTeamName={dep.TeamName}
+                      depHSorColl={dep.HSorColl}
+                      depNames={dep.Names}
+                      depSchools={dep.Schools}
+                      depGrades={dep.Grades}
+                      depStruggle={dep.Struggle}
+                      depIdeaProject={dep.IdeaProject}
+                      depLocation={dep.Location}
+                      depContactInfo={dep.ContactInfo}
+                      depPhoneNumber={dep.PhoneNumber}
                     />
                   </ButtonToolbar>
                 </td>

@@ -6,13 +6,7 @@ export class EditTeamModal extends Component{
         super(props);
         this.handleSubmit=this.handleSubmit.bind(this);
     }
-    componentDidMount(){
-        fetch(process.env.REACT_APP_API+'teamprofile')
-        .then(response=>response.json())
-        .then(data=>{
-            this.setState({deps:data});
-        });
-    }
+   
 
     handleSubmit(event){
         event.preventDefault();
@@ -45,29 +39,7 @@ export class EditTeamModal extends Component{
         })
     }
     
-    handleFileSelected(event){
-        event.preventDefault();
-        const formData = new FormData();
-        formData.append(
-            "myFile",
-            event.target.files[0],
-            event.target.files[0].name
-        );
-
-        fetch('http://127.0.0.1:8000/teamProfile/',{
-            method:'POST',
-            body:formData
-        })
-        .then(res=>res.json())
-        .then((result)=>{
-            alert(result);
-        },
-        (error)=>{
-            alert('Failed');
-        })
-        
-    }
-    render(){
+        render(){
         return (
             <div className="container">
 
@@ -96,7 +68,7 @@ centered
                     </Form.Group>
 
                     <Form.Group controlId="TeamName">
-                        <Form.Label>TeamName hello</Form.Label>
+                        <Form.Label>TeamName</Form.Label>
                         <Form.Control type="text" name="TeamName" required 
                         defaultValue={this.props.depname}
                         placeholder="TeamName"/>
