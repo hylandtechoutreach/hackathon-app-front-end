@@ -63,68 +63,68 @@ centered
                         <Form.Label>TeamId</Form.Label>
                         <Form.Control type="text" name="TeamId" required
                         disabled
-                        defaultValue={this.props.depid} 
+                        defaultValue={this.props.teamid} 
                         placeholder="TeamId"/>
                     </Form.Group>
 
                     <Form.Group controlId="TeamName">
                         <Form.Label>TeamName</Form.Label>
                         <Form.Control type="text" name="TeamName" required 
-                        defaultValue={this.props.depname}
+                        defaultValue={this.props.teamname}
                         placeholder="TeamName"/>
                     </Form.Group>
                     <Form.Group controlId="HSorColl">
                         <Form.Label>Highschool or College</Form.Label>
                         <Form.Control type="text" name="HSorColl" required 
-                        defaultValue={this.props.dephsorcoll}
+                        defaultValue={this.props.teamhsorcoll}
                         placeholder="HighSchool or College"/>
                     </Form.Group>
                     <Form.Group controlId="Names">
                         <Form.Label>Names</Form.Label>
                         <Form.Control type="text" name="Names" required 
-                        defaultValue={this.props.depnames}
+                        defaultValue={this.props.teamnames}
                         placeholder="Names"/>
                     </Form.Group>
                     <Form.Group controlId="Schools">
                         <Form.Label>Schools</Form.Label>
                         <Form.Control type="text" name="Schools" required 
-                        defaultValue={this.props.depschools}
+                        defaultValue={this.props.teamschools}
                         placeholder="Schools"/>
                     </Form.Group>
                     <Form.Group controlId="Grades">
                         <Form.Label>Grade levels</Form.Label>
                         <Form.Control type="text" name="Grades" required 
-                        defaultValue={this.props.depgrades}
+                        defaultValue={this.props.teamgrades}
                         placeholder="Grade Levels"/>
                     </Form.Group>
                     <Form.Group controlId="Struggle">
                         <Form.Label>Struggles</Form.Label>
                         <Form.Control type="text" name="Struggle" required 
-                        defaultValue={this.props.depstruggle}
+                        defaultValue={this.props.teamstruggle}
                         placeholder="List all struggles here"/>
                     </Form.Group>
                     <Form.Group controlId="IdeaProject">
                         <Form.Label>Project Idea</Form.Label>
                         <Form.Control type="text" name="IdeaProject" required 
-                        defaultValue={this.props.depideaproject}
+                        defaultValue={this.props.teamideaproject}
                         placeholder="Enter Project Idea here"/>
                     </Form.Group>
                     <Form.Group controlId="Location">
                         <Form.Label>Location</Form.Label>
                         <Form.Control type="text" name="Location" required 
-                        defaultValue={this.props.deplocation}
+                        defaultValue={this.props.teamlocation}
                         placeholder="Location"/>
                     </Form.Group>
                     <Form.Group controlId="ContactInfo">
                         <Form.Label>Contact Information</Form.Label>
                         <Form.Control type="text" name="ContactInfo" required 
-                        defaultValue={this.props.depcontactinfo}
+                        defaultValue={this.props.teamcontactinfo}
                         placeholder="ContactInfo"/>
                     </Form.Group>
                     <Form.Group controlId="PhoneNumber">
                         <Form.Label>Phone Number</Form.Label>
                         <Form.Control type="text" name="PhoneNumber" required 
-                        defaultValue={this.props.depphonenumber}
+                        defaultValue={this.props.teamphonenumber}
                         placeholder="Phone Number"/>
                     </Form.Group>
 

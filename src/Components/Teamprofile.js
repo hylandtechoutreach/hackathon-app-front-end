@@ -7,7 +7,7 @@ import { EditTeamModal } from "./EditTeamModal";
 export class TeamProfile extends Component {
   constructor(props) {
     super(props);
-    this.state = { deps: [], addModalShow: false, editModalShow: false };
+    this.state = { teams: [], addModalShow: false, editModalShow: false };
   }
 
   refreshList() {
@@ -15,7 +15,7 @@ export class TeamProfile extends Component {
       .then((response) => response.json())
 
       .then((data) => {
-        this.setState({deps: data});
+        this.setState({teams: data});
       });
   }
   componentDidMount() {
@@ -26,7 +26,7 @@ export class TeamProfile extends Component {
   }
 
   render() {
-    const {deps, depid, depname, dephsorcoll, depnames, depschools, depgrades, depstruggle, depideaproject, deplocation, depcontactinfo, depphonenumber} = this.state;
+    const {teams, teamid, teamname, teamhsorcoll, teamnames, teamschools, teamgrades, teamstruggle, teamideaproject, teamlocation, teamcontactinfo, teamphonenumber} = this.state;
     let addModalClose = () => this.setState({ addModalShow: false });
     let editModalClose = () => this.setState({ editModalShow: false });
     return (
@@ -47,39 +47,39 @@ export class TeamProfile extends Component {
             </tr>
           </thead>
           <tbody>
-            {deps.map((dep) => (
-              <tr key={dep.TeamId}>
+            {teams.map((team) => (
+              <tr key={team.TeamId}>
                 
-                <td>{dep.TeamName}</td>
-                <td>{dep.HSorColl}</td>
-                <td>{dep.Names}</td>
-                <td>{dep.Schools}</td>
-                <td>{dep.Grades}</td>
-                <td>{dep.Struggle}</td>
-                <td>{dep.IdeaProject}</td>
-                <td>{dep.Location}</td>
-                <td>{dep.ContactInfo}</td>
-                <td>{dep.PhoneNumber}</td>
+                <td>{team.TeamName}</td>
+                <td>{team.HSorColl}</td>
+                <td>{team.Names}</td>
+                <td>{team.Schools}</td>
+                <td>{team.Grades}</td>
+                <td>{team.Struggle}</td>
+                <td>{team.IdeaProject}</td>
+                <td>{team.Location}</td>
+                <td>{team.ContactInfo}</td>
+                <td>{team.PhoneNumber}</td>
                 <td>
                   <ButtonToolbar>
                     <Button variant="info"
                       onClick={()=>this.setState({ editModalShow: true, //has to be true or will not show at all
-                        depid: dep.TeamId, depname: dep.TeamName, dephsorcoll: dep.HSorColl, depnames: dep.Names, depschools: dep.Schools, depgrades: dep.Grades, depstruggle: dep.Struggle, depideaproject: dep.IdeaProject, deplocation: dep.Location, depcontactinfo: dep.ContactInfo, depphonenumber: dep.PhoneNumber,})}>
+                        teamid: team.TeamId, teamname: team.TeamName, teamhsorcoll: team.HSorColl, teamnames: team.Names, teamschools: team.Schools, teamgrades: team.Grades, teamstruggle: team.Struggle, teamideaproject: team.IdeaProject, teamlocation: team.Location, teamcontactinfo: team.ContactInfo, teamphonenumber: team.PhoneNumber,})}>
                       Edit
                     </Button>
                     <EditTeamModal
                       show={this.state.editModalShow}
                       onHide={editModalClose}
-                      depTeamName={dep.TeamName}
-                      depHSorColl={dep.HSorColl}
-                      depNames={dep.Names}
-                      depSchools={dep.Schools}
-                      depGrades={dep.Grades}
-                      depStruggle={dep.Struggle}
-                      depIdeaProject={dep.IdeaProject}
-                      depLocation={dep.Location}
-                      depContactInfo={dep.ContactInfo}
-                      depPhoneNumber={dep.PhoneNumber}
+                      teamTeamName={team.TeamName}
+                      teamHSorColl={team.HSorColl}
+                      teamNames={team.Names}
+                      teamSchools={team.Schools}
+                      teamGrades={team.Grades}
+                      teamStruggle={team.Struggle}
+                      teamIdeaProject={team.IdeaProject}
+                      teamLocation={team.Location}
+                      teamContactInfo={team.ContactInfo}
+                      teamPhoneNumber={team.PhoneNumber}
                     />
                   </ButtonToolbar>
                 </td>
