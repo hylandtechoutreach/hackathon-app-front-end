@@ -7,7 +7,19 @@ import { EditTeamModal } from "./EditTeamModal";
 export class TeamProfile extends Component {
   constructor(props) {
     super(props);
-    this.state = { teams: [], addModalShow: false, editModalShow: false };
+    this.state = {
+      teamprofiles: [],
+      TeamName: "",
+      HSorColl: "",
+      Names: "",
+      Schools: "",
+      Grades: "",
+      Struggle: "",
+      IdeaProject: "",
+      Location: "",
+      ContactInfo: "",
+      PhoneNumber: "",
+    };
   }
 
   refreshList() {
@@ -15,7 +27,7 @@ export class TeamProfile extends Component {
       .then((response) => response.json())
 
       .then((data) => {
-        this.setState({teams: data});
+        this.setState({ teams: data });
       });
   }
   componentDidMount() {
@@ -24,11 +36,65 @@ export class TeamProfile extends Component {
   componentDidUpdate() {
     this.refreshList();
   }
+  editClick(team) {
+    this.setState({
+      modalTitle: "Edit Teams",
+      teamTeamName: team.TeamName,
+      teamHSorColl: team.HSorColl,
+      teamNames: team.Names,
+      teamSchools: team.Schools,
+      teamGrades: team.Grades,
+      teamStruggle: team.Struggle,
+      teamIdeaProject: team.IdeaProject,
+      teamLocation: team.Location,
+      teamContactInfo: team.ContactInfo,
+      teamPhoneNumber: team.PhoneNumber,
+    });
+  }
+  updateClick() {
+    fetch("http://127.0.0.1:8000/teamProfile/", {
+      method: "PUT",
+      body: JSON.stringify({
+        teamTeamName: this.state.TeamName,
+        teamHSorColl: this.state.HSorColl,
+        teamNames: this.state.Names,
+        teamSchools: this.state.Schools,
+        teamGrades: this.state.Grades,
+        teamStruggle: this.state.Struggle,
+        teamIdeaProject: this.state.IdeaProject,
+        teamLocation: this.state.Location,
+        teamContactInfo: this.state.ContactInfo,
+        teamPhoneNumber: this.state.PhoneNumber,
+      }),
+    })
+      .then((res) => res.json())
+      .then(
+        (result) => {
+          alert(result);
+          this.refreshList();
+        },
+        (error) => {
+          alert("Failed");
+        }
+      );
+  }
 
   render() {
-    const {teams, teamid, teamname, teamhsorcoll, teamnames, teamschools, teamgrades, teamstruggle, teamideaproject, teamlocation, teamcontactinfo, teamphonenumber} = this.state;
+    const {
+      teams,
+      teamid,
+      teamname,
+      teamhsorcoll,
+      teamnames,
+      teamschools,
+      teamgrades,
+      teamstruggle,
+      teamideaproject,
+      teamlocation,
+      teamcontactinfo,
+      teamphonenumber,
+    } = this.state;
     let addModalClose = () => this.setState({ addModalShow: false });
-    let editModalClose = () => this.setState({ editModalShow: false });
     return (
       <div>
         <Table className="mt-4" striped bordered hover size="sm">
@@ -49,7 +115,6 @@ export class TeamProfile extends Component {
           <tbody>
             {teams.map((team) => (
               <tr key={team.TeamId}>
-                
                 <td>{team.TeamName}</td>
                 <td>{team.HSorColl}</td>
                 <td>{team.Names}</td>
@@ -62,26 +127,21 @@ export class TeamProfile extends Component {
                 <td>{team.PhoneNumber}</td>
                 <td>
                   <ButtonToolbar>
-                    <Button variant="info"
-                      onClick={()=>this.setState({ editModalShow: true, //has to be true or will not show at all
-                        teamid: team.TeamId, teamname: team.TeamName, teamhsorcoll: team.HSorColl, teamnames: team.Names, teamschools: team.Schools, teamgrades: team.Grades, teamstruggle: team.Struggle, teamideaproject: team.IdeaProject, teamlocation: team.Location, teamcontactinfo: team.ContactInfo, teamphonenumber: team.PhoneNumber,})}>
+                    <button variant="info" onClick={() => this.editClick(team)}>
+                      {" "}
                       Edit
-                    </Button>
-                    <EditTeamModal
-                      show={this.state.editModalShow}
-                      onHide={editModalClose}
-                      teamTeamName={team.TeamName}
-                      teamHSorColl={team.HSorColl}
-                      teamNames={team.Names}
-                      teamSchools={team.Schools}
-                      teamGrades={team.Grades}
-                      teamStruggle={team.Struggle}
-                      teamIdeaProject={team.IdeaProject}
-                      teamLocation={team.Location}
-                      teamContactInfo={team.ContactInfo}
-                      teamPhoneNumber={team.PhoneNumber}
-                    />
+                    </button>
                   </ButtonToolbar>
+                  <div className="modal-body">
+                    {
+                      // {TeamId!=0?
+                      // <button type="button"
+                      // className="btn btn-primary float-start"
+                      // onClick={()=>this.updateClick()}
+                      // >Update</button>
+                      // :null}
+                    }
+                  </div>
                 </td>
               </tr>
             ))}
