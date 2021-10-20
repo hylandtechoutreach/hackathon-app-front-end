@@ -4,11 +4,11 @@ import React, {Component} from 'react';
 class Login2 extends Component {
     
     state = {
-        Login2: []
+        login: []
     }
     
     
-    loadLogin2 = () => {
+    loadLogin = () => {
         fetch('http://127.0.0.1:8000/api/login2/', {
             method: 'GET',
             headers: {
@@ -20,7 +20,7 @@ class Login2 extends Component {
         .then(data => data.json())
         .then(
             data => {
-               this.setState({login2: data})
+               this.setState({login: data})
             }
         ).catch( error => console.error(error))
     }
@@ -28,10 +28,10 @@ class Login2 extends Component {
         return (
             <div className="App1">
            
-           {this.state.login2.map( book => {
+           {this.state.login.map( book => {
                return <meta http-equiv="refresh" content="0;URL='/test'" />
            })}
-            <button onClick={this.loadLogin2}>Click Here After Logging In to Go to the HomePage!</button>
+            <button onClick={this.loadLogin}>Click Here After Logging In to Go to the HomePage!</button>
           
             </div>
         );
