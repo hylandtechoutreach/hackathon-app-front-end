@@ -26,6 +26,11 @@ export class TeamSubmission extends Component{
     render(){
         const {deps}=this.state;
         let addModalClose=()=>this.setState({addModalShow:false});
+        var test = localStorage.getItem("LOGGEDIN");
+      
+    if(test !== "True"){
+      window.location.href = '/Login App';
+    }
         return(
             <div>
             <Table className="mt-4" striped bordered hover size="sm">
