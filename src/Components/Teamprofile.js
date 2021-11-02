@@ -8,7 +8,7 @@ export class TeamProfile extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      teamprofiles: [],
+      teams: [],
       TeamName: "",
       HSorColl: "",
       Names: "",
@@ -92,7 +92,7 @@ export class TeamProfile extends Component {
       teamideaproject,
       teamlocation,
       teamcontactinfo,
-      teamphonenumber,
+      teamphonenumber
     } = this.state;
     let addModalClose = () => this.setState({ addModalShow: false });
     return (
