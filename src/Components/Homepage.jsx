@@ -4,6 +4,7 @@ import QuoteAndAuthor from "./QuoteAndAuthor";
 import quotes from "./QuoteDB";
 
 export default class App extends Component {
+  
   //state
   state = {
     quote: quotes[0].quote,
@@ -34,8 +35,17 @@ export default class App extends Component {
   };
 
     render() {
+      var test = localStorage.getItem("LOGGEDIN");
+      
+      if(test != "True"){
+        window.location.href = '/Login App';
+      }
+
+      
         return (
+          
             <div className="homepage">
+             
               <h1 id="welcome">Welcome To Hyland Hackathon!</h1>
                  <div className="container">
                     <div className="left_container">
@@ -61,6 +71,7 @@ export default class App extends Component {
             </div>
             </div>
         );
+        
     };
 };
 

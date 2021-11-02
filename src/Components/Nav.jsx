@@ -10,6 +10,10 @@ import Teamprofile from "./Teamprofile.js";
 import Viewteams from "./Viewteams";
 import Homepage from "./Homepage";
 import { useState } from "react";
+import Login from "./login"
+import App1 from "./Login App";
+import TEST from "./test";
+import SignOut from "./Sign Out";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 const Nav = () => {
@@ -50,6 +54,11 @@ const Nav = () => {
             <Link to="/Pastevents">
               <button className="button">Past Events</button>
             </Link>
+            <Link to="/SignOut">
+              <button className="button">Sign Out</button>
+            </Link>
+           
+           
            
           </div>
         </div>
@@ -65,6 +74,11 @@ const Nav = () => {
               <Route path="/Viewteams" exact component={Viewteams}></Route>
               <Route path="/Submissions" exact component={Submissions}></Route>
               <Route path="/Pastevents" exact component={Pastevents}></Route>
+              <Route path="/login" exact component={Login}></Route>
+              <Route path="/Login App" exact component={App1}></Route>
+              <Route path="/test" exact component={TEST}></Route>
+              <Route path="/SignOut" exact component={SignOut}></Route>
+        
         
             </Switch>
           </div>

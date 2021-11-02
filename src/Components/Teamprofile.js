@@ -5,6 +5,7 @@ import { AddTeamModal } from "./AddTeamModal";
 import { EditTeamModal } from "./EditTeamModal";
 
 export class TeamProfile extends Component {
+
   constructor(props) {
     super(props);
     this.state = {
@@ -80,6 +81,11 @@ export class TeamProfile extends Component {
   }
 
   render() {
+   var test = localStorage.getItem("LOGGEDIN");
+      
+    if(test !== "True"){
+      window.location.href = '/Login App';
+    }
     const {
       teams,
       teamid,
